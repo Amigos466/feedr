@@ -8,7 +8,7 @@ export const GET_CHANNELS_LIST = 'GET_CHANNELS_LIST';
 
 export function getChannel(url) {
     return (dispatch) => {
-        return callApi('http://localhost:4025/api/getfeed', 'post', {
+        return callApi('/api/getfeed', 'post', {
             params: {
                 url: url,
             },
