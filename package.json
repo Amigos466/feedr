@@ -47,9 +47,10 @@
     "request": "^2.79.0",
     "rss-parser": "^2.5.2",
     "style-loader": "latest",
-    "webpack": "latest",
+    "webpack": "2.1.0-beta.22",
     "webpack-dev-middleware": "latest",
-    "webpack-hot-middleware": "latest"
+    "webpack-hot-middleware": "latest",
+    "feedparser": "latest"
   },
   "engines": {
     "node": "6.9.1"
