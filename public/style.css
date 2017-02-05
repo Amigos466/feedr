@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer_text{
+  text-align: center;
+  color: #8e97ad;
+  font-size: 15px;
+  margin: 0px;
+}
+
+.footer_row{
+  background-color: rgba(34, 36, 57, 0.15);
+  padding: 9px 0;
+  box-shadow: 0px 1px 10px 1px #060615;
+  margin-top: 60px;
+}
+
+.poster_holder{
+  padding: 0;
+}
+
+.poster_holder img{
+  width: 100%;
+}
+
+.Description{
+  color: #fff;
+}
+
+.Description h1{
+  margin: 0;
+  text-align: center;
+}
+
+.load_more{
+  background-color: #32a3b0;
+  color: #fff;
+  font-size: 25px;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.load_more:hover{
+  background-color: #0b9aab;
+  text-decoration: unset;
+  color: #eee;
+}
+
+.movie-item{
+  padding-bottom: 25px;
+  padding-left: 0px;
+  padding-right: 25px;
+  max-height: 440px;
+  overflow: hidden;
+}
+
+.movie-item img{
+  width: 100%;
+  -webkit-box-shadow: 0px 6px 63px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 63px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 63px 0px rgba(0,0,0,0.75);
+}
+
+.movie-item h4{
+  color: #fff;
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  min-height: 45px;
+}
+
+.movie-item h5{
+  color: #847f7f;
+  font-size: 14px;
+  margin-top: 5px;
+  min-height: 30px;
+}
+
+.top-bar{
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.btn-holder{
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.side_menu{
+  padding-left: 0px;
+}
+
+.side_menu li{
+  margin-right: 35px;
+  list-style: none;
+  transition: 0.5s;
+}
+
+.side_menu li a{
+  color: #464c5c;
+  font-size: 20px;
+  padding-left: 40px;
+  text-decoration: unset;
+  line-height: 2.5;
+  display: block;
+}
+.side_menu li:hover{
+  background-color: #36496f;
+  border-left: 5px solid #fff;
+}
+
+.genre_h{
+  margin-left: 7px;
+}
+
+.details_table{
+  margin-top: 20px;
+}
+
+.details_table td{
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+
+.side_menu .active{
+  background-color: #36496f;
+  border-left: 5px solid #fff;
+  color: #fff;
+}
+
+.side_menu li:hover a{
+    color: #fff;
+}
+
+.top_search{
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  transition: 300ms;
+}
+
+.top_search i{
+ background-color: #33a4b1;
+ border-radius: 50%;
+ padding: 8px;
+}
+
+.logo_img{
+  float: left;
+}
+
+.logo_list{
+  border-top: 2px solid #fff;
+}
+
+.logo_text{
+  float: left;
+  margin-left: 15px;
+  font-size: 25px;
+}
+
+.logo_text p{
+  padding: 0;
+  margin: 0;
+}
+
+.side_header{
+  text-align: center;
+  color: #fff;
+}
+
+.collapse_search_form.top_search i{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+#search_holder > *{
+  float: right;
+}
+
+.collapse_search_form .resized_input{
+  opacity: 1;
+  width: 70%;
+}
+
+.resized_input{
+  color: #000;
+  opacity: 0;
+  width: 0px;
+  transition: 300ms;
+}
+
+.resized_input.butt{
+  widthL 0;
+  display: none;
+  opacity: 0;
+  transition: 300ms;
+}
+
+.collapse_search_form  .resized_input.butt{
+    width: 15%;
+    background-color: #33a4b1;
+    padding: 10px;
+    font-size: 15px;
+    color: #fff;
+    opacity: 1;
+    display: block;
+    cursor: pointer;
+    text-decoration: unset !important;
+}
+
+.Search{
+  min-height: 70vh;
+}
+
+body{
+font-family: helvetica, arial, sans-serif;
+background: rgb(31,30,48);
+background: -moz-linear-gradient(left,  rgba(31,30,48,1) 0%, rgba(59,77,116,1) 54%, rgba(59,77,116,1) 74%, rgba(43,50,78,1) 100%);
+background: -webkit-linear-gradient(left,  rgba(31,30,48,1) 0%,rgba(59,77,116,1) 54%,rgba(59,77,116,1) 74%,rgba(43,50,78,1) 100%);
+background: linear-gradient(to right,  rgba(31,30,48,1) 0%,rgba(59,77,116,1) 54%,rgba(59,77,116,1) 74%,rgba(43,50,78,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1f1e30', endColorstr='#2b324e',GradientType=1 );
+}
+
+.favorites{
+  position: absolute;
+    font-size: 50px;
+    color: #fff;
+    z-index: 9;
+    top: 10px;
+    right: 15%;
+    transition: 300ms;
+}
+
+.favorites.true{
+  color: yellow;
+}
+
+.singleMovie .favorites{
+    right: 5%;
+}
+
+.recomended, .similar{
+  padding: 0;
+}
+
+.recomended h2, .similar h2{
+  color: #fff;
+}
+
+.singleMovie .movies_list .favorites {
+    right: 15%;
+}

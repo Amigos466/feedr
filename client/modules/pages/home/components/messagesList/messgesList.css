@@ -1,0 +1,9 @@
+.scroller{
+    overflow-y: scroll;
+    height: 370px;
+    overflow-x: hidden;
+}
+
+.itemls{
+	cursor: pointer;
+}

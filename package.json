@@ -1,0 +1,75 @@
+{
+  "name": "rssfeedr",
+  "version": "1.0.0",
+  "description": "App for parse rss channels and view statistics",
+  "main": "server.js",
+  "scripts": {
+    "babel-node": "babel-node --presets=/*a*/ --ignore='foo|bar|baz'",
+    "start": "babel-node server.js",
+    "lint": "eslint server.js"
+  },
+  "dependencies": {
+    "babel-cli": "latest",
+    "babel-core": "latest",
+    "babel-loader": "latest",
+    "babel-plugin-webpack-loaders": "^0.7.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "latest",
+    "babel-preset-es2015-native-modules": "^6.6.0",
+    "babel-preset-latest": "latest",
+    "babel-preset-react": "latest",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "chart.js": "^2.4.0",
+    "compression": "^1.6.2",
+    "css-loader": "latest",
+    "eslint-plugin-react": "^6.9.0",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "normalize.css": "^5.0.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-focus": "^1.0.0",
+    "postcss-loader": "^1.2.2",
+    "postcss-reporter": "^3.0.0",
+    "random-color": "^1.0.1",
+    "react": "latest",
+    "react-bootstrap": "latest",
+    "react-chartjs-2": "^2.0.0",
+    "react-dom": "latest",
+    "react-hot-loader": "latest",
+    "react-redux": "^5.0.1",
+    "react-router": "latest",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.1.0",
+    "request": "^2.79.0",
+    "rss-parser": "^2.5.2",
+    "style-loader": "latest",
+    "webpack": "latest",
+    "webpack-dev-middleware": "latest",
+    "webpack-hot-middleware": "latest"
+  },
+  "engines": {
+    "node": "6.9.1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "node",
+    "hyperdev",
+    "express"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "file-loader": "^0.9.0",
+    "json-loader": "^0.5.4"
+  }
+}
