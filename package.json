@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "babel-node": "babel-node --presets=/*a*/ --ignore='foo|bar|baz'",
-    "prod": "NODE_ENV=production babel-node server.js",
-    "start": "babel-node server.js",
+    "start": "NODE_ENV=production babel-node server.js",
+    "dev": "babel-node server.js",
     "lint": "eslint ."
   },
   "dependencies": {
