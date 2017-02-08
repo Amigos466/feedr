@@ -1,20 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link, hashHistory, browserHistory } from 'react-router';
+import React from 'react';
 
 //CSS
 import styles from './currentMessage.css';
 
-function stripHtml(e) {
-    if (e) {
-        let to_return = e.replace(/<\/?[^>]+(>|$)/g, "");
-        return to_return + '...';
-    }
-}
-
-
 function currentMessage(props) {
-    return (
+	return (
         <div>
           <h4>Current message</h4>
           <div className="card">
@@ -25,7 +15,7 @@ function currentMessage(props) {
             </div>
           </div>
         </div>
-        );
+	);
 }
 
 export default currentMessage;

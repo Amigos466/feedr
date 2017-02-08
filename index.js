@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import configureStore from './client/store/configureStore';
 import Home from './client/modules/pages/home/App';
@@ -24,4 +22,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-module.hot.accept()
+module.hot.accept();

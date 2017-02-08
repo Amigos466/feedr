@@ -7,22 +7,22 @@ export const GET_CHANNELS_LIST = 'GET_CHANNELS_LIST';
 // Functions
 
 export function getChannel(url) {
-    return (dispatch) => {
-        return callApi('/api/getfeed', 'post', {
-            params: {
-                url: url,
-            },
-        }).then(res => dispatch(reciveRssChannel(res)));
-    };
+	return (dispatch) => {
+		return callApi('/api/getfeed', 'post', {
+			params: {
+				url: url,
+			},
+		}).then(res => dispatch(reciveRssChannel(res)));
+	};
 }
 
 
-// RECIVERS
+// Recivers
 
 export function reciveRssChannel(data) {
-    return {
-        type: 'GET_RSS_CHANNEL',
-        payload: data
-    }
+	return {
+		type: 'GET_RSS_CHANNEL',
+		payload: data
+	};
 
 }

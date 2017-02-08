@@ -5,8 +5,9 @@
   "main": "server.js",
   "scripts": {
     "babel-node": "babel-node --presets=/*a*/ --ignore='foo|bar|baz'",
+    "prod": "NODE_ENV=production babel-node server.js",
     "start": "babel-node server.js",
-    "lint": "eslint server.js"
+    "lint": "eslint ."
   },
   "dependencies": {
     "babel-cli": "latest",
@@ -25,9 +26,11 @@
     "bootstrap": "^4.0.0-alpha.6",
     "chart.js": "^2.4.0",
     "compression": "^1.6.2",
+    "compression-webpack-plugin": "^0.3.2",
     "css-loader": "latest",
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.14.0",
+    "feedparser": "latest",
     "isomorphic-fetch": "^2.2.1",
     "normalize.css": "^5.0.0",
     "postcss-cssnext": "^2.9.0",
@@ -36,7 +39,6 @@
     "postcss-reporter": "^3.0.0",
     "random-color": "^1.0.1",
     "react": "latest",
-    "react-bootstrap": "latest",
     "react-chartjs-2": "^2.0.0",
     "react-dom": "latest",
     "react-hot-loader": "latest",
@@ -49,8 +51,7 @@
     "style-loader": "latest",
     "webpack": "2.1.0-beta.22",
     "webpack-dev-middleware": "latest",
-    "webpack-hot-middleware": "latest",
-    "feedparser": "latest"
+    "webpack-hot-middleware": "latest"
   },
   "engines": {
     "node": "6.9.1"

@@ -3,6 +3,15 @@
 	margin-left: 20px !important;
 }
 
+.itemlist{
+	cursor: pointer;
+}
+
+.itemlist:hover{
+	cursor: pointer;
+    background-color: #eee;
+}
+
 .scroller{
     overflow-y: scroll;
     height: 335px;
