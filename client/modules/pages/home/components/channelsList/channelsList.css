@@ -3,6 +3,10 @@
 	margin-left: 20px !important;
 }
 
+.error{
+    color: red;
+}
+
 .itemlist{
 	cursor: pointer;
 }
@@ -23,3 +27,21 @@
     color: #fff !important;
     cursor: pointer;
 }
+
+.addbt{
+	cursor: pointer;
+}
+
+.addbt:hover{
+	background-color: #9eea99;
+    color: #fff;
+}
+
+.addbt:focus{
+	box-shadow: unset !important;
+}
+
+.error::-webkit-input-placeholder {color:#c0392b;}
+.error::-moz-placeholder          {color:#c0392b;}/* Firefox 19+ */
+.error:-moz-placeholder           {color:#c0392b;}/* Firefox 18- */
+.error:-ms-input-placeholder      {color:#c0392b;}

@@ -12,6 +12,7 @@ function stripHtml(e) {
 }
 
 function countLetters(message) {
+	var description = message.description;
 	var chartData = {
 		labels: ['Loading'],
 		datasets: [{
@@ -21,8 +22,8 @@ function countLetters(message) {
 			]
 		}]
 	};
-	if (message) {
-		let lower_mess = stripHtml(message).toLowerCase();
+	if (description) {
+		let lower_mess = stripHtml(description).toLowerCase();
 		let array_of_let = lower_mess.match(/[a-z]/ig);
 		if (array_of_let) {
 			let output = {};
@@ -49,6 +50,17 @@ function countLetters(message) {
 			}
 		}
 	}
+	if(description === null){
+		chartData = {
+			labels: ['No description in current message'],
+			datasets: [{
+				data: [200],
+				backgroundColor: [
+					'blue'
+				]
+			}]
+		};
+	}
 	return chartData;
 }
 
@@ -56,7 +68,7 @@ function statistics(props) {
 	return (
         <div>
           <h4>Statistics</h4>
-          <DoughnutChart data={ countLetters(props.current_message.description)} options={ {
+          <DoughnutChart data={ countLetters(props.current_message)} options={ {
 	'rotation': 0
 }} />
         </div>

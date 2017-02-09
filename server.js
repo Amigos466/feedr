@@ -41,7 +41,7 @@ app.post('/api/getfeed', function(req, res) {
 	};
 
 	reqfeed.on('error', error => {
-		console.log(error);
+		to_send.error = err.message;
 	});
 
 	reqfeed.on('response', function(res) {
@@ -53,8 +53,8 @@ app.post('/api/getfeed', function(req, res) {
 		}
 	});
 
-	feedparser.on('error', error => {
-		console.log(error);
+	feedparser.on('error', err => {
+		to_send.error = err.message;
 	});
 
 	feedparser.on('readable', function() {
