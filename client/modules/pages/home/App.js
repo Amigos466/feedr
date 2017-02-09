@@ -16,111 +16,111 @@ import Statistics from './components/statistics/statistics';
 
 const App = React.createClass({
 
-    getInitialState() {
-        return {
-            channel: {},
-            errors: '',
-            current_channel: 0,
-            channels_meta: {},
-            rss_channels_list: {},
-            current_message: {}
-        };
-    },
+	getInitialState() {
+		return {
+			channel: {},
+			errors: '',
+			current_channel: 0,
+			channels_meta: {},
+			rss_channels_list: {},
+			current_message: {}
+		};
+	},
 
-    componentWillMount() {
-        this.freshRssList();
-    },
+	componentWillMount() {
+		this.freshRssList();
+	},
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.rss_channel) {
-            if (!nextProps.rss_channel.error) {
-                this.setState({
-                    current_message: nextProps.rss_channel.items[0],
-                    channel: nextProps.rss_channel.items,
-                    errors: ''
-                });
-                this.saveToLs(nextProps.rss_channel.items, nextProps.rss_channel.from);
-            }
-            else{
-            	this.setState({
-            		errors: `SERVER ERROR: ${nextProps.rss_channel.error}`
-            	});
-            }
-        }
-    },
+	componentWillReceiveProps(nextProps) {
+		if (nextProps.rss_channel) {
+			if (!nextProps.rss_channel.error) {
+				this.setState({
+					current_message: nextProps.rss_channel.items[0],
+					channel: nextProps.rss_channel.items,
+					errors: ''
+				});
+				this.saveToLs(nextProps.rss_channel.items, nextProps.rss_channel.from);
+			}
+			else{
+				this.setState({
+					errors: `SERVER ERROR: ${nextProps.rss_channel.error}`
+				});
+			}
+		}
+	},
 
-    updateCurrentChannel(url, element) {
-        this.setState({
-            current_message: {},
-            channel: {}
-        });
-        if (url) {
-            this.props.dispatch(getChannel(url[0]));
-        }
-        this.toggleActive(element);
-    },
+	updateCurrentChannel(url, element) {
+		this.setState({
+			current_message: {},
+			channel: {}
+		});
+		if (url) {
+			this.props.dispatch(getChannel(url[0]));
+		}
+		this.toggleActive(element);
+	},
 
-    freshRssList() {
-        if (window.localStorage) {
-            let svaed_channels = localStorage.getItem('svaed_channels');
-            let favobj = JSON.parse(svaed_channels);
-            if (favobj) {
-                this.setState({
-                    rss_channels_list: favobj
-                });
-            }
-        }
-    },
+	freshRssList() {
+		if (window.localStorage) {
+			let svaed_channels = localStorage.getItem('svaed_channels');
+			let favobj = JSON.parse(svaed_channels);
+			if (favobj) {
+				this.setState({
+					rss_channels_list: favobj
+				});
+			}
+		}
+	},
 
-    saveToLs(channel, url) {
-        if (window.localStorage) {
-            let svaed_channels = localStorage.getItem('svaed_channels');
-            let favobj = JSON.parse(svaed_channels);
-            if (favobj[url] && channel) {
-                favobj[url].authorscount = this.countAuthors(channel);
-                favobj[url].messagecount = channel.length;
-                let change = this.state.channels_meta;
-                change[url] = favobj[url];
-                this.setState({
-                    channels_meta: change
-                });
-            }
-        }
-    },
+	saveToLs(channel, url) {
+		if (window.localStorage) {
+			let svaed_channels = localStorage.getItem('svaed_channels');
+			let favobj = JSON.parse(svaed_channels);
+			if (favobj[url] && channel) {
+				favobj[url].authorscount = this.countAuthors(channel);
+				favobj[url].messagecount = channel.length;
+				let change = this.state.channels_meta;
+				change[url] = favobj[url];
+				this.setState({
+					channels_meta: change
+				});
+			}
+		}
+	},
 
-    countAuthors(channel) {
-        if (channel) {
-            var differ = {};
-            for (let prop in channel) {
-                if (differ.hasOwnProperty(channel[prop].author)) {
-                    differ[channel[prop].author] = differ[channel[prop].author] + 1;
-                } else {
-                    differ[channel[prop].author] = 1;
-                }
-            }
-            return Object.keys(differ).length;
-        }
-    },
+	countAuthors(channel) {
+		if (channel) {
+			var differ = {};
+			for (let prop in channel) {
+				if (differ.hasOwnProperty(channel[prop].author)) {
+					differ[channel[prop].author] = differ[channel[prop].author] + 1;
+				} else {
+					differ[channel[prop].author] = 1;
+				}
+			}
+			return Object.keys(differ).length;
+		}
+	},
 
-    toggleActive(element) {
-        let elementClassList = element.classList;
-        let similar = document.getElementsByClassName(elementClassList.value);
-        for ( let item of similar ) {
-            item.classList.remove('active');
-        }
-        elementClassList.toggle('active');
-    },
+	toggleActive(element) {
+		let elementClassList = element.classList;
+		let similar = document.getElementsByClassName(elementClassList.value);
+		for ( let item of similar ) {
+			item.classList.remove('active');
+		}
+		elementClassList.toggle('active');
+	},
 
-    chooseMessage(message, element) {
-        this.setState({
-            current_message: message
-        });
-        this.toggleActive(element);
-    },
+	chooseMessage(message, element) {
+		this.setState({
+			current_message: message
+		});
+		this.toggleActive(element);
+	},
 
-    render() {
-        this.countAuthors();
-        return (
+	render() {
+		this.countAuthors();
+		return (
             <div className="App">
               <div className="container-fluid">
                 <Header current={ this.props.routes.reverse()[0].name } searchAction={ this.Search } />
@@ -143,19 +143,19 @@ const App = React.createClass({
                 <Footer/>
               </div>
             </div>
-        );
-    }
+		);
+	}
 });
 
 function mapStateToProps(state) {
-    return {
-        rss_channel: getRssChannel(state)
-    };
+	return {
+		rss_channel: getRssChannel(state)
+	};
 }
 
 
 App.propTypes = {
-    rss_channel: React.PropTypes.object.isRequired
+	rss_channel: React.PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(App);

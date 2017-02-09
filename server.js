@@ -40,7 +40,7 @@ app.post('/api/getfeed', function(req, res) {
 		'from': req.body.params.url
 	};
 
-	reqfeed.on('error', error => {
+	reqfeed.on('error', err => {
 		to_send.error = err.message;
 	});
 
